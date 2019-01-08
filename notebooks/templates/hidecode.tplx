@@ -1,0 +1,12 @@
+((*- extends 'article.tplx' -*))
+((* block maketitle *))
+((* endblock maketitle *))
+((* block commands *))
+\setcounter{secnumdepth}{0} % Turns off numbering for sections
+((( super() )))
+((* endblock commands *))
+((* block input_group *))
+    ((*- if cell.metadata.get('nbconvert', {}).get('show_code', False) -*))
+            ((( super() )))
+    ((*- endif -*))
+((* endblock input_group *))
